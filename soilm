@@ -1,0 +1,20 @@
+import RPi.GPIO as x
+import time
+x.setwarnings(False)
+x.setmode(x.BCM0
+x.cleanup()
+soil=18
+realay=4
+x.setup(soil,x.IN)
+x.setup(relay,x.OUT)
+try:
+    while True:
+         if x.input(soil):
+            x.output(realay,True)
+            time.sleep(5)
+         else:
+            x.output(relay,False)
+            time.sleep(50
+except KeyboardInterrupt:
+     x.cleanup(0
+exit()
